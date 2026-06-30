@@ -10,7 +10,7 @@ manifest:
       revision: main
       import: app/west.yml
     - name: prospector-zmk-module                 # <--- and these
-      url: https://github.com/not-in-stock/prospector-zmk-module                        # <---
-      revision: feature/auto-sleep                # <---
+      url: https://github.com/carrefinho/prospector-zmk-module                       # <---
+      revision: refs/pull/16/head                # <---
   self:
     path: config
