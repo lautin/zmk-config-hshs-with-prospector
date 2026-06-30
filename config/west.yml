@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: prospector-zmk-module
       remote: not-in-stock
-      revision: feature/auto-sleep
+      revision: feat/display-auto-sleep
   self:
     path: config
