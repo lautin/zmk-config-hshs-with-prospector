@@ -2,15 +2,13 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: carrefinho                            # <--- add this
-      url-base: https://github.com/carrefinho     # <--- and this
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: prospector-zmk-module                 # <--- and these
-      url: https://github.com/carrefinho/prospector-zmk-module                       # <---
-      revision: refs/pull/16/head                # <---
+    - name: prospector-zmk-module
+      url: https://github.com
+      revision: feature/auto-sleep
   self:
     path: config
