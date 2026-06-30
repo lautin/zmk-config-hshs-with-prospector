@@ -4,15 +4,13 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: carrefinho                            # <--- add this
       url-base: https://github.com/carrefinho     # <--- and this
-    - name: not-in-stock
-      url-base: https://github.com
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: prospector-zmk-module                 # <--- and these
-      remote: not-in-stock                        # <---
+      url: https://github.com/not-in-stock/prospector-zmk-module                        # <---
       revision: feature/auto-sleep                # <---
   self:
     path: config
