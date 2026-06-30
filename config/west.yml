@@ -2,15 +2,15 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: not-in-stock
-      url-base: https://github.com/not-in-stock
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: prospector-zmk-module
-      remote: not-in-stock
-      revision: feat/display-auto-sleep
+      remote: carrefinho
+      revision: refs/pull/16/head
   self:
     path: config
