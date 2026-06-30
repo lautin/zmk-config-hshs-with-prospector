@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: carrefinho                            # <--- add this
       url-base: https://github.com/carrefinho     # <--- and this
-    - name: not-in-stock
-      url-base: h
   projects:
     - name: zmk
       remote: zmkfirmware
