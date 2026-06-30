@@ -47,7 +47,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "CLIPBOARD_DANCE";
             #binding-cells = <0>;
-            bindings = <&copy_paste V C>, <&kp LC(X)>;
+            bindings = <&copy_paste LC(V) LC(C)>, <&kp LC(X)>;
         };
     };
 
