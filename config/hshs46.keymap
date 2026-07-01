@@ -49,6 +49,86 @@
             #binding-cells = <0>;
             bindings = <&copy_paste LC(V) LC(C)>, <&kp LC(X)>;
         };
+
+        round_brackets: round_brackets {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ROUND_BRACKETS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
+        };
+
+        round_tapdance: round_tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ROUND_TAPDANCE";
+            #binding-cells = <0>;
+            bindings =
+                <&round_brackets RIGHT_PARENTHESIS LEFT_PARENTHESIS>,
+                <&round_bracket_macro>;
+        };
+
+        square_brackets: square_brackets {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SQUARE_BRACKETS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
+        };
+
+        square_tapdance: square_tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SQUARE_TAPDANCE";
+            #binding-cells = <0>;
+            bindings =
+                <&square_brackets RIGHT_BRACKET LEFT_BRACKET>,
+                <&square_bracket_macro>;
+        };
+
+        curly_brackets: curly_brackets {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CURLY_BRACKETS";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "balanced";
+        };
+
+        curly_tapdance: curly_tapdance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CURLY_TAPDANCE";
+            #binding-cells = <0>;
+            bindings =
+                <&curly_brackets RIGHT_BRACE LEFT_BRACE>,
+                <&curly_bracket_macro>;
+        };
+    };
+
+    macros {
+        round_bracket_macro: round_bracket_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
+            label = "ROUND_BRACKET_MACRO";
+        };
+
+        square_bracket_macro: square_bracket_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            label = "SQUARE_BRACKET_MACRO";
+        };
+
+        curly_bracket_macro: curly_bracket_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
+            label = "CURLY_BRACKET_MACRO";
+        };
     };
 
     keymap {
@@ -104,10 +184,10 @@
  */
 
             bindings = <
-&none  &none  &none  &none  &none  &none                              &none  &kp HOME     &kp UP    &kp END        &none  &none
-&none  &none  &none  &none  &none  &none                              &none  &kp LEFT     &kp DOWN  &kp RIGHT      &none  &none
-&none  &none  &none  &none  &none  &none  &none                &none  &none  &kp PAGE_UP  &none     &kp PAGE_DOWN  &none  &none
-                            &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none                              &square_tapdance  &kp HOME     &kp UP    &kp END        &none  &none
+&none  &none  &none  &none  &none  &none                              &round_tapdance   &kp LEFT     &kp DOWN  &kp RIGHT      &none  &none
+&none  &none  &none  &none  &none  &none  &none                &none  &curly_tapdance   &kp PAGE_UP  &none     &kp PAGE_DOWN  &none  &none
+                            &none  &none  &none  &none  &none  &none  &none             &none
             >;
 
             display-name = "Nav";
@@ -124,13 +204,13 @@
  */
 
             bindings = <
-&kp INS  &kp EXCL  &kp AT     &kp HASH   &kp DOLLAR  &kp PERCENT                                      &kp CARET   &kp AMPS      &kp ASTRK     &kp LPAR  &kp RPAR  &kp DEL
-&none    &kp BSLH  &kp MINUS  &kp EQUAL  &kp LBKT    &kp RBKT                                         &kp HOME    &kp RSHFT     &kp RCTRL     &kp LALT  &kp RGUI  &kp END
-&trans   &kp PIPE  &kp UNDER  &kp PLUS   &kp LBRC    &kp RBRC     &sk RALT                 &kp K_APP  &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP  &none     &kp RCTRL
-                                         &trans      &trans       &trans    &mo 4  &trans  &trans     &trans      &trans
+&none  &kp CARET        &kp AMPERSAND  &kp ASTERISK  &none       &none                                    &none   &kp N7        &kp N8        &kp N9        &none  &none
+&none  &kp EXCLAMATION  &kp AT_SIGN    &kp POUND     &kp DOLLAR  &kp PERCENT                              &none   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none  &none
+&none  &none            &none          &none         &none       &none        &none                &none  &none   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none  &none
+                                                     &none       &none        &none  &none  &none  &none  &kp N0  &kp DOT
             >;
 
-            display-name = "Sym";
+            display-name = "Sym + Num";
             sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
