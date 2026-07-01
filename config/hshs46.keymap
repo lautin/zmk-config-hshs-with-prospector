@@ -129,13 +129,20 @@
             bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
             label = "CURLY_BRACKET_MACRO";
         };
+
+        lock_screen: lock_screen {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(RC(L))>;
+            label = "LOCK_SCREEN";
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
         lock {
-            bindings = <&kp LC(LA(L))>;
+            bindings = <&lock_screen>;
             key-positions = <41 42>;
         };
     };
