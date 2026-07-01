@@ -144,10 +144,10 @@
  */
 
             bindings = <
-&kp TAB        &kp SQT   &kp COMMA  &kp DOT  &kp P     &kp Y                                                                                   &kp F      &kp G      &kp C  &kp R  &kp L  &kp EQUAL
-&mt LCTRL ESC  &kp A     &kp O      &kp E    &lt 2 U   &kp I                                                                                   &kp D      &kp H      &kp T  &kp N  &kp S  &kp SLASH
-&kp GRAVE      &kp SEMI  &kp Q      &kp J    &kp K     &kp X                     &screenshot_delete DEL PRINTSCREEN                &kp C_MUTE  &kp B      &kp M      &kp W  &kp V  &kp Z  &kp BACKSLASH
-                                             &kp LGUI  &mt LEFT_SHIFT BACKSPACE  &clipboard_dance                    &mo 2  &mo 3  &kp ENTER   &kp SPACE  &kp MINUS
+&mt LEFT_ALT TAB  &kp SQT   &kp COMMA  &kp DOT  &kp P     &kp Y                                                                                   &kp F      &kp G      &kp C  &kp R  &kp L  &kp EQUAL
+&mt LCTRL ESC     &kp A     &kp O      &kp E    &lt 2 U   &kp I                                                                                   &kp D      &kp H      &kp T  &kp N  &kp S  &kp SLASH
+&kp GRAVE         &kp SEMI  &kp Q      &kp J    &kp K     &kp X                     &screenshot_delete DEL PRINTSCREEN                &kp C_MUTE  &kp B      &kp M      &kp W  &kp V  &kp Z  &kp BACKSLASH
+                                                &kp LGUI  &mt LEFT_SHIFT BACKSPACE  &clipboard_dance                    &mo 3  &mo 3  &kp ENTER   &kp SPACE  &kp MINUS
             >;
 
             display-name = "Dvorak";
@@ -184,10 +184,10 @@
  */
 
             bindings = <
-&none  &none  &none  &none  &none  &none                              &square_tapdance  &kp HOME     &kp UP    &kp END        &none  &none
-&none  &none  &none  &none  &none  &none                              &round_tapdance   &kp LEFT     &kp DOWN  &kp RIGHT      &none  &none
-&none  &none  &none  &none  &none  &none  &none                &none  &curly_tapdance   &kp PAGE_UP  &none     &kp PAGE_DOWN  &none  &none
-                            &none  &none  &none  &none  &none  &none  &none             &none
+&none  &none  &none  &none  &none  &none                               &square_tapdance  &kp HOME     &kp UP    &kp END        &none  &none
+&none  &none  &none  &none  &none  &none                               &round_tapdance   &kp LEFT     &kp DOWN  &kp RIGHT      &none  &none
+&none  &none  &none  &none  &none  &none   &none                &none  &curly_tapdance   &kp PAGE_UP  &none     &kp PAGE_DOWN  &none  &none
+                            &none  &trans  &none  &none  &none  &none  &none             &none
             >;
 
             display-name = "Nav";
