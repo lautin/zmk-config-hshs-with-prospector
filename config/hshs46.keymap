@@ -131,6 +131,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        lock {
+            bindings = <&kp LC(LA(L))>;
+            key-positions = <41 42>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
